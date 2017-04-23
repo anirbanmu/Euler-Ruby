@@ -26,15 +26,7 @@ def run_euler_problems()
         problems.push(time_problem_solve(problem_number.to_i, Object.const_get('Problem' + problem_number).new))
     end
 
-    problems.sort do |a, b|
-        if (a < b)
-            -1
-        end
-        if (b > a)
-            1
-        end
-        0
-    end
+    problems.sort! {|a, b| a.idx <=> b.idx}
 
     problems.each do |p|
         puts 'Problem ' + p.idx.to_s + ': ' + p.result.to_s + " ( " + p.time.to_s + " μs )"
