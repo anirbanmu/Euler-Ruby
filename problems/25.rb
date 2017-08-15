@@ -23,9 +23,7 @@ end
 
 def fibonacci_upper_bound_index(digits)
   upper_bound = 1
-  x = 1
   while fibonacci_digits(upper_bound) < digits
-    x += 1
     upper_bound *= 2
   end
   upper_bound
